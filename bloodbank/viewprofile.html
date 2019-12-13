@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <h1 align="center">Profile Details</h1>
+    </head>
+<body background="123.jpg">
+    <div align="center">
+    <textarea name="ayush" id="why" cols="30" rows="10"></textarea>
+    <div>
+    <input type="button" onclick="rtrv()" value="retrieve profile" />
+    
+    </div>
+    </div>
+    <br/><br/>
+    <div align="center">
+        <form id="update" name="sandy">
+                Name: <input type="text" placeholder="Enter the name" id="name" required/><br/>
+                Sex: <input type="radio" name ="radio12" value="M" />M  
+                <input type="radio" name="radio12" value ="F"/>F <br/>
+                Blood Type: <select id = "blood">
+                    <option value = "A+" selected="selected">A+</option>
+                    <option value = "A-">A-</option>
+                    <option value = "B+">B+</option>
+                    <option value = "B-">B-</option>
+                    <option value = "O+">O+</option>
+                    <option value = "O-">O-</option>
+                    <option value = "AB+">AB+</option>
+                    <option value = "AB-">AB-</option>
+                </select>  <br/>
+                DOB: <input type="date" name = "DOB" id="dob" required/>  <br/>
+                
+                <input type="button" value="update" onclick="up()"/>  <input type="reset" id="res"/>    
+            </form>
+    </div>
+
+</body>
+<script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
+
+                <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+                <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-analytics.js"></script>
+              
+                <!-- Add Firebase products that you want to use -->
+                <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-auth.js"></script>
+                    <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-database.js"></script>
+<script src = "vwpfl.js"></script>
+</html>

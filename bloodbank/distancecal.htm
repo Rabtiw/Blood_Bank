@@ -1,0 +1,130 @@
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+          /* Set the size of the div element that contains the map */
+          #map {
+            height: 800px;  /* The height is 400 pixels */
+            width: 100%;  /* The width is the width of the web page */
+           }
+        </style>
+      </head>
+<body>
+    <div id="map"></div>
+
+
+
+    <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
+
+    <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+    <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-analytics.js"></script>
+  
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-database.js"></script>
+
+        <script src="https://smtpjs.com/v3/smtp.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDBgOhJCS_cSjJHyuuz0adxnmekld_ESdo&libraries=geometry&language=en&callback=myman" async defer></script>
+  
+<script type="text/javascript">
+
+var d
+var f
+function myman(){
+var firebaseConfig = {
+    apiKey: "AIzaSyCzg7Z8O3IWy1-fEiCrSNI-wFZMXbXRG-g",
+    authDomain: "registerform-701f3.firebaseapp.com",
+    databaseURL: "https://registerform-701f3.firebaseio.com",
+    projectId: "registerform-701f3",
+    storageBucket: "registerform-701f3.appspot.com",
+    messagingSenderId: "101669468589",
+    appId: "1:101669468589:web:ba343ccdb399cd08718924",
+    measurementId: "G-7Z7Y1QSQ3V"
+  };
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+  var messageRef = firebase.database().ref('messages');
+
+  messageRef.once('value',gotdata)
+}
+  function gotdata(data){
+    var profile = data.val();
+    var keys = Object.keys(profile)
+    console.log(keys);
+    var user = firebase.auth().currentUser.uid;
+    firebase.database().ref('messages/'+user).once('value',getuser)
+    
+    function getuser(data){
+      d = data.val().latitude
+      f = data.val().longitude
+      console.log(keys.length)
+      var id =[]
+    for(var i = 0;i<keys.length;i++){
+        var k = keys[i];
+        if(k==user){
+          var uluru = {lat:profile[k].latitude,
+                        lng:profile[k].longitude}
+          continue
+        }
+        var x = profile[k].longitude;
+        var y = profile[k].latitude;
+        console.log(x,y)
+        srcLocation = new google.maps.LatLng(d, f);
+        dstLocation = new google.maps.LatLng(y, x);
+        var distance = google.maps.geometry.spherical.computeDistanceBetween(srcLocation, dstLocation)
+        info = {
+          marker:{lat:y,
+                lng:x},
+          dis:distance,
+          mail:profile[k].mail}
+        id.push(info)
+    }
+    
+    initMap(id,uluru,data.val().mail)
+  }
+    
+}
+    function initMap(id,uluru,kry){
+      console.log(id)
+      var maillist = []
+      var map = new google.maps.Map(
+      document.getElementById('map'), {zoom:3,center:uluru});
+      id = id.sort(compare)   //custom function
+      console.log(id)
+      var z
+      if(id.length<=2){
+        z = id.length
+      }
+      else
+        z = 3
+        for( i=0;i<z;i++)
+  {
+    var marker = new google.maps.Marker({position:id[i].marker, map: map});
+    maillist.push(id[i].mail)
+}
+
+Email.send({
+        Host : "smtp25.elasticemail.com",
+        Username : "sirivella.ramu26@gmail.com",
+        Password : "de65e337-9338-41aa-86a6-6abcf988749c",
+        To : maillist,
+        From : "sirivella.ramu26@gmail.com",
+        Subject : "In Need Of Blood",
+        Body : "Kind person, please donate blood if willing contact me through mail:"+kry+""
+    }).then(
+      message => alert(message)
+    );
+      
+       
+    }
+function compare(a,b){
+  console.log(a)
+  if(a.dis>b.dis) return 1 
+  else return -1
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Click the button to get your coordinates.</p>
+
+<button onclick="getLocation()">Try It</button>
+
+<p id="demo"></p>
+<div id= "mapholder"></div>
+<script>
+  var markers = [{
+    "lat":24.879999,
+    "long":74.629997
+
+  },
+  {
+    "lat":28.610001,
+    "long":77.230003
+
+  },
+  {
+    "lat":14.167040,
+    "long":75.040298
+
+  },
+  {
+    "lat":24.633568,
+    "long":87.849251
+
+  },
+  ];
+var x = document.getElementById("demo");
+
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else { 
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+
+function showPosition(position) {
+  x.innerHTML = "Latitude: " + position.coords.latitude + 
+  "<br>Longitude: " + position.coords.longitude;
+
+
+
+  var latlon = position.coords.latitude + "," + position.coords.longitude;
+
+  var img_url = "https://maps.googleapis.com/maps/api/staticmap?center="+latlon+"&zoom=14&size=400x300&sensor=false&key=AIzaSyDBgOhJCS_cSjJHyuuz0adxnmekld_ESdo";
+
+  document.getElementById("mapholder").innerHTML = "<img src='"+img_url+"'>";
+}
+</script>
+
+</body>
+</html>

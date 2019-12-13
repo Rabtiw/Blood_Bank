@@ -1,0 +1,116 @@
+<html>
+ <head>
+ 	<link rel="stylesheet" type="text/css" href="bootstrap.css">
+ 	<link rel="stylesheet" type="text/css" href="js/Bootstrap.css">
+ 	<link rel="stylesheet" type="text/css" href="style4.css">
+ </head>
+ <body onload="getLocation()">
+ 	 <div class="container">
+ 	 	<div class="row">
+ 	 		<div class="col-md-7"> 
+ 	 			<h1 class="text-left">Blood donation registration form</h1>
+ 	 		
+ 	 		</div>
+ 	 		<div class="col-md-5">
+ 	 			<div class="row">
+ 	 				<div class="col-md-6">
+ 	 					<h3 class="text-left">Registration form</h3>
+ 	 				</div>
+ 	 				<div class="col-md-6">
+ 	 					<span class="glyphicon glyphicon-pencil"></span></div>
+ 	 			</div>
+				<hr>
+				<form id="register_form" name="sandy">
+				<div class="row">
+					<label class="label col-md-2 control-label">Name</label>
+					<div class="col-md-10">
+						<input type="text" class="form-control"  id="name" name="name" placeholder="Name" required>
+					</div>
+				</div>
+			
+					<div class="row">
+							<label class="label col-md-2 control-label">Password</label>
+							<div class="col-md-10">
+								<input type="Password" class="form-control" name="Password" placeholder="*****" id="pass" required>
+							</div>
+						</div>	
+
+					<div class="row">
+								<label class="label col-md-2 control-label">ReEnter</label>
+								
+								<div class="col-md-10">
+									<input type="Password" class="form-control" name="Password" placeholder="*****" id="c_pass" required>
+								</div>
+					</div>	
+				<div class="row">
+					<label class="label col-md-2 control-label">DOB</label>
+					<div class="col-md-10">
+					 <input type="date" name = "DOB" id="dob"class="form-control" required  onclick="checkpass()"/> 
+					</div>
+				</div>
+				<div class="row">
+					<label class="label col-md-2 control-label">E-mail</label>
+					<div class="col-md-10">
+						<input type="Email" class="form-control" name="Email" placeholder="Email" id="mail" required>
+					</div>
+				</div>
+				
+				<div class="row">
+						<label class="label col-md-2 control-label">Sex</label>
+						<div class="col-md-10">
+						<input  type="radio" value="M" name="radio12" checked="checked" size="10px"> <font color="white"> M</font> 	<input  type="radio" value="F" name="radio12"> <font color="white">F</font> 
+					</div>
+				</div>
+				<div class="row">
+						<label class="label col-md-2 control-label" style="font-size:16px;">BloodGroup</label>
+					
+						<div class="col-md-10">
+							<select size="1" id="blood" style="background: black;color:white">
+							   <option value="A+" selected="selected">A +ve</option>
+								 <option value="A-">A -ve</option>
+								 <option value="B+">B +ve</option>
+							   <option value="B-">B -ve</option>
+								<option value="O+">O +ve</option>
+							   <option value="O-">O +ve</option>
+							   <option value="AB+">AB +ve</option>
+							   <option value="AB-">AB -ve</option>
+							  </select>
+						</div>
+					</div>
+		
+				<input type="submit" value="confirm"/> 
+				 <input type="reset" id="res"/>
+
+			
+				</form>
+				<!---close-->
+ 	 		</div>
+ 	 		</div>
+	  </div>
+	  
+	  <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
+
+	  <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+	  <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-analytics.js"></script>
+	
+	  <!-- Add Firebase products that you want to use -->
+	  <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-auth.js"></script>
+		  <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-database.js"></script>
+
+
+	<script>
+		 function checkpass()
+		{
+		  var pass1=document.getElementById("pass").value;
+		  var pass2=document.getElementById("c_pass").value;
+		  if(pass1!=pass2)
+		  {
+			  window.alert("invalid confirm password");
+		  }
+		}
+	</script>
+
+<script src = "main.js"></script>
+</body>
+ 	</body>
+ 	</html>

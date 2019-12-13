@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <h1> Register</h1>
+    </head>
+    <body onload="getLocation()">
+        <form id = "register_form" name="sandy">
+            <!--<div class="alert">Your message has been sent</div>-->
+            Name: <input type="text" placeholder="Enter the name" id="name" required/><br/>
+            Sex: <input type="radio" name ="radio12" value="M" />M  
+            <input type="radio" name="radio12" value ="F"/>F <br/>
+            Blood Type: <select id = "blood">
+                <option value = "A+" selected="selected">A+</option>
+                <option value = "A-">A-</option>
+                <option value = "B+">B+</option>
+                <option value = "B-">B-</option>
+                <option value = "O+">O+</option>
+                <option value = "O-">O-</option>
+                <option value = "AB+">AB+</option>
+                <option value = "AB-">AB-</option>
+            </select>  <br/>
+            password: <input type="text" placeholder="enter the password" id="pass" required/>  <br/>
+            confirm password: <input type="text" placeholder="confrim the password" id="c_pass" required/>  <br/>
+            DOB: <input type="date" name = "DOB" id="dob" required/>  <br/>
+            
+            Mail: <input type="email" id="mail"/><br/>  
+            <input type="submit" value="confirm"/>  <input type="reset" id="res"/>    
+        </form>
+                <textarea id="sinha">
+        
+                </textarea>
+                <br/>
+                <input type="button" value="add" onclick="yo()"/>
+                <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
+
+                <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+                <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-analytics.js"></script>
+              
+                <!-- Add Firebase products that you want to use -->
+                <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-auth.js"></script>
+                    <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-database.js"></script>
+
+
+              
+    
+        <script src = "main.js"></script>
+    </body>

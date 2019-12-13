@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://kit.fontawesome.com/b7ef1bd6b8.js" crossorigin="anonymous"></script>
+<style>
+body {
+  margin: 0;
+  font-size: 28px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.row .column .intro {
+  height: 500px;
+
+ 
+}
+.row .column .intro .slideshow-img {
+  
+  width: 100%; /* relative to nearest positioned ancestor and not nearest block-level ancestor - alternatively: width: 100vw; */
+  height: 100%; /* relative to nearest positioned ancestor and not nearest block-level ancestor - alternatively: height: 100vh; */ 
+  
+  display:none;
+  /* filter: brightness(50%); */ /* 0% black, 100% original image, values > 100% are allowed for brighter than original image. */
+  /* display: none; */
+ 
+}
+
+
+#navbar {
+  overflow: hidden;
+  background-color: black;
+  
+  
+}
+
+#navbar a {
+  float: right;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 20px 55px;
+  text-decoration: none;
+  font-size: 17px;
+   display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: box-shadow, transform;
+  transition-property: box-shadow, transform;
+
+}
+
+#navbar a:hover {
+  background-color: pink;
+  color: black;
+   box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5);
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+    
+}
+
+
+#navbar a.active {
+  background-color: #4CAF50;
+  color: white;
+   box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5);
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+  
+}
+.footer
+{
+    background: #303036;
+    color:#d3d3d3;
+    height:370px;
+    border-radius: 10px
+
+}
+
+.footer .footer-content
+{
+    
+    height: 260px;
+
+}
+
+
+.footer .footer-content h1,
+.footer .footer-content h2
+{
+color:white;    
+}
+.footer .footer-content .about h1 span
+{
+    color:#05f7ff;
+}
+.footer .footer-content .about .contact span
+{
+    display: block;
+    font-size: 1.1em;
+    margin-bottom: 8px;
+}
+
+.footer .footer-content .about .socials a
+{
+    border:1px solid grey;
+    width:45px;
+    height:41px;
+    padding-top:5px;
+    margin-right:15px;
+    text-align: center;
+    display: inline-block;
+    font-size: 1.3em;
+    border-radius: 5px;     
+    transition: all .3s;
+    border-radius: 30px;
+  
+
+}
+
+.footer .footer-content .about .socials .facebook a:hover
+{
+    border: 1px solid white;
+    color:#3b5998 !important;
+    transition: all .3s;
+
+    
+}
+.footer .footer-content .about .socials .instagram a:hover
+{
+
+    border: 1px solid white;
+    color:white;
+    transition: all .3s;
+    border:1px solid grey;
+    width:45px;
+    height:41px;
+    padding-top:5px;
+    margin-right:15px;
+    text-align: center;
+    display: inline-block;
+    font-size: 1.3em;
+    border-radius: 5px;
+    transition: all .3s;
+    border-radius: 40px;
+  color: #fff;
+ 
+ 
+  vertical-align: middle;
+  background: #d6249f;
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+  box-shadow: 0px 3px 10px rgba(0,0,0,.25);
+
+    
+}
+
+.footer .footer-content .about .socials .twitter a:hover
+{
+    border: 1px solid white;
+    color:#00aced !important;
+    transition: all .3s;
+
+}
+footer .footer-content .links ul a
+{
+display:block;
+margin-bottom: 10px;
+font-size:1.2em;
+
+}   
+
+.footer .footer-content .links ul a:hover
+{
+color:white;
+margin-left:15px;
+transition:all .6s;
+    }
+
+
+
+
+.content {
+  padding: 16px;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+.row .column {
+  box-sizing: border-box;
+}
+
+/* Create two equal columns that floats next to each other */
+.column {
+  float: left;
+  top:40px;
+  width: 50%;
+  padding: 80px;
+  height: 500px; /* Should be removed. Only for demonstration */
+}
+
+body {
+  margin: 0;
+  font-size: 28px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.row .column .intro {
+  height: 500px;
+
+ 
+}
+.row .column .intro .slideshow-img {
+  
+  width: 100%; /* relative to nearest positioned ancestor and not nearest block-level ancestor - alternatively: width: 100vw; */
+  height: 100%; /* relative to nearest positioned ancestor and not nearest block-level ancestor - alternatively: height: 100vh; */ 
+  
+  display:none;
+  /* filter: brightness(50%); */ /* 0% black, 100% original image, values > 100% are allowed for brighter than original image. */
+  /* display: none; */
+ 
+}
+
+
+#navbar {
+  overflow: hidden;
+  background-color: black;
+  
+  
+}
+
+#navbar a {
+  float: right;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 20px 55px;
+  text-decoration: none;
+  font-size: 17px;
+   display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: box-shadow, transform;
+  transition-property: box-shadow, transform;
+
+}
+
+#navbar a:hover {
+  background-color: pink;
+  color: black;
+   box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5);
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+    
+}
+
+
+#navbar a.active {
+  background-color: #4CAF50;
+  color: white;
+   box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5);
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+  
+}
+.footer
+{
+    background: #303036;
+    color:#d3d3d3;
+    height:370px;
+    border-radius: 10px
+
+}
+
+.footer .footer-content
+{
+    
+    height: 260px;
+
+}
+
+
+.footer .footer-content h1,
+.footer .footer-content h2
+{
+color:white;    
+}
+.footer .footer-content .about h1 span
+{
+    color:#05f7ff;
+}
+.footer .footer-content .about .contact span
+{
+    display: block;
+    font-size: 1.1em;
+    margin-bottom: 8px;
+}
+
+.footer .footer-content .about .socials a
+{
+    border:1px solid grey;
+    width:45px;
+    height:41px;
+    padding-top:5px;
+    margin-right:15px;
+    text-align: center;
+    display: inline-block;
+    font-size: 1.3em;
+    border-radius: 5px;     
+    transition: all .3s;
+    border-radius: 30px;
+  
+
+}
+
+.footer .footer-content .about .socials .facebook a:hover
+{
+    border: 1px solid white;
+    color:#3b5998 !important;
+    transition: all .3s;
+
+    
+}
+.footer .footer-content .about .socials .instagram a:hover
+{
+
+    border: 1px solid white;
+    color:white;
+    transition: all .3s;
+    border:1px solid grey;
+    width:45px;
+    height:41px;
+    padding-top:5px;
+    margin-right:15px;
+    text-align: center;
+    display: inline-block;
+    font-size: 1.3em;
+    border-radius: 5px;
+    transition: all .3s;
+    border-radius: 40px;
+  color: #fff;
+ 
+ 
+  vertical-align: middle;
+  background: #d6249f;
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+  box-shadow: 0px 3px 10px rgba(0,0,0,.25);
+
+    
+}
+
+.footer .footer-content .about .socials .twitter a:hover
+{
+    border: 1px solid white;
+    color:#00aced !important;
+    transition: all .3s;
+
+}
+footer .footer-content .links ul a
+{
+display:block;
+margin-bottom: 10px;
+font-size:1.2em;
+
+}   
+
+.footer .footer-content .links ul a:hover
+{
+color:white;
+margin-left:15px;
+transition:all .6s;
+    }
+
+
+
+
+.content {
+  padding: 16px;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+.row .column {
+  box-sizing: border-box;
+}
+
+/* Create two equal columns that floats next to each other */
+.column {
+  float: left;
+  top:40px;
+  width: 50%;   
+  padding: 80px;
+  height: 500px; /* Should be removed. Only for demonstration */
+}
+
+
+
+</style>
+</head>
+<body style="background: black;">
+
+
+<div id="navbar">
+  
+  <a href="#footer">Contact US</a>
+  <a href="register.html">SIGNUP</a>
+    <a href="login.html">LOGIN</a>
+</div>
+
+<div class="row">
+<div class="column" style="background-color:red;padding:0px">
+   <header class="intro">
+    
+      <img src="8.jpg" class="slideshow-img">
+      <img src="9.jpg" class="slideshow-img">
+      <img src="10.jpg" class="slideshow-img">
+     
+      </header>
+</div>
+<div class="column" style="background-color:black;padding:150px">
+
+<h4 style="color:red">You dont have to be a doctor to save lives</h4>
+<h4 style="color:red">Just Donate Blood</h4>
+</div>
+</div>
+
+<div class="content" style="color:white">
+  <p>To give blood you need neither extra strength nor extra food, and you will save a life.</p><p> If you're a blood donor, you're a hero to someone, somewhere, who received your gracious gift of life.</p><p> A bottle of blood saved my life, was it yours.” “Every blood donor is a life saver.”</p>
+ 
+</div>
+<div class="footer" id="footer">
+    <div class="footer-content">
+        <div class="footer-section about">
+            <h1 class="logo-text" style="text-align:center;"><span >Blood</span>Bank</h1>
+            <p style="text-align:center">
+                    “Tears of a mother cannot save her Child. But your Blood can.”
+                </p>    
+            <div class="contact">
+                <span><i class="fas fa-phone"></i>&nbsp; 9740-167-142</span>
+                <span><i class="fas fa-envelope"></i>&nbsp;sirivella.26@agmail.com</span>
+            </div>
+            <div class="socials">
+            <span class="facebook">     
+                <a  href="https://en-gb.facebook.com/sirivella.ramu"><i class="fab fa-facebook" ></i></a>
+            </span>     
+            <span class="instagram">        
+                <a href="https://www.instagram.com/sandeepramsandeep/"><i class="fab fa-instagram" ></i></a>
+            </span> 
+            <span class="twitter">  
+                <a href="https://twitter.com/varunjcnayak?lang=en"><i class="fab fa-twitter"></i></a>
+            </span>     
+            </div>      
+        </div>
+        
+
+
+
+
+        
+
+    </div>  
+
+
+  </div> 
+<script>
+window.onscroll = function() {myFunction()};
+
+var navbar = document.getElementById("navbar");
+var sticky = navbar.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}
+const slideshowImages = document.querySelectorAll(".slideshow-img");
+console.log("hii")
+const nextImageDelay = 5000;
+let currentImageCounter = 0; // setting a variable to keep track of the current image (slide)
+
+slideshowImages[currentImageCounter].style.display = "block";
+//slideshowImages[currentImageCounter].style.opacity = 1;
+
+setInterval(nextImage, nextImageDelay);
+
+function nextImage() {
+   slideshowImages[currentImageCounter].style.display = "none";
+  //slideshowImages[currentImageCounter].style.opacity = 0;
+
+  currentImageCounter = (currentImageCounter+1) % slideshowImages.length;
+
+   slideshowImages[currentImageCounter].style.display = "block";
+  //slideshowImages[currentImageCounter].style.opacity = 1;
+}
+</script>
+
+</body>
+</html>

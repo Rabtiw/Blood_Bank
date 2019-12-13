@@ -1,0 +1,117 @@
+
+
+*{ 
+
+	margin: 0px;
+	padding: 0px;
+ }
+ body{
+ 		background-image: url(2.jpeg);
+ 		background-size: cover;
+ 		background-attachment: fixed;
+ 		font-family: Roboto;
+  }
+ h1 {
+ 	font-size: 40px;
+ 	color: white;
+ 	margin-top: 15px;
+  }
+ p{
+ 	font-size: 17px;
+ 	color: white; 
+ }
+ h3{
+ 	font-size: 25px;
+ 	color: yellow;
+ }
+ .glyphicon-pencil{
+ 	font-size: 35px;
+ 	color: white;
+ 	float: right;
+ 	margin-top: 10px;
+ }
+ .col-md-5{
+ 	margin-top: 50px;
+ 	box-shadow: -1px 1px 30px 10px yellow;
+ 	background: rgba(0,0,0,0.4);
+ }
+ .label{
+ 	font-family: Courier;
+ 	margin-top: 15px;
+ 	 color: white;
+ 	 font-size: 17px;
+ 	 text-transform: uppercase;
+ }
+ .form-control{
+ 	background: transparent;
+ 	border-radius: 0px;
+ 	border-radius: 0px;
+ 	border-bottom: 1px solid white;
+ 	font-size: 18px;
+ 	margin-top: 5px;
+ 	height: 40px;
+ 	color: white;
+
+ }
+ input[type="radio"]{
+ 	border: 0px;
+    width: 20%;
+    height: 1em; 	
+margin-top: 17px;
+ 	color: white;
+ }
+ 
+option{
+	color: gray;
+
+}
+select{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin-top: 10px;
+margin-left:10px;
+    padding: 3px;
+}
+.btn-info{
+	margin-top: 20px;
+	font-size: 18px;
+	width: 120px;
+	margin-left: 80px;
+	margin-bottom: 20px;
+
+}
+.btn-warning{
+	margin-top: 20px;
+	font-size: 18px;
+	width: 120px;
+	margin-left: 80px;
+	margin-bottom: 20px;
+	
+}
+ input[type="submit"]{
+ 	  background-color:red;
+  border: none;
+  color: white;
+  padding: 10px 22px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+ }
+
+ input[type="reset"]{
+float:right;
+ 	  background-color:red;
+  border: none;
+  color: white;
+  padding: 10px 22px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+ }

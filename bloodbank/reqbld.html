@@ -1,0 +1,72 @@
+<html>
+    <body style="background: rgb(6, 26, 53);color:rgb(167, 189, 69);font-size:24px">
+        <style>
+         
+.btn {
+  border: 2px solid black;
+  border-radius: 5px;
+  background-color: white;
+  color: black;
+  padding: 8px 22px;
+  font-size: 16px;
+  cursor: pointer;
+  align-self: auto;
+}
+
+
+/* Red */
+.danger {
+  background: #f44336;
+  color:black;
+}
+
+.danger:hover {
+  background: #d42114;
+  color: white;
+}
+.success {
+  border-color: #4CAF50;
+  color: green;
+}
+
+.success:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+
+
+</style>
+           
+            Blood Type: <select id = "blood" style="color:darkgray;background: black;font-size: 20px;">
+                    <option value = "A+" selected="selected">A+</option>
+                    <option value = "A-">A-</option>
+                    <option value = "B+">B+</option>
+                    <option value = "B-">B-</option>
+                    <option value = "O+">O+</option>
+                    <option value = "O-">O-</option>
+                    <option value = "AB+">AB+</option>
+                    <option value = "AB-">AB-</option>
+                </select>  
+            
+            <input type="button"class="btn danger" value="request" onclick="rtrv()"/>
+            <br/>
+            
+            <p id="hola"></p>
+            <input type="button" class="btn success" onclick="mail()" value="mail"/> 
+            </div>
+            <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
+
+                <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+                <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-analytics.js"></script>
+              
+                <!-- Add Firebase products that you want to use -->
+                <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-auth.js"></script>
+                    <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-database.js"></script>
+        <script src="rev1.js">
+            //var table = document.createElement('table border="1"');
+        </script>
+        <script src="https://smtpjs.com/v3/smtp.js"></script>    
+            
+        </body>
+
+</html>
